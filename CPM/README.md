@@ -14,22 +14,6 @@
 - We also introduce 4 new datasets (both real and synthesis) to train and evaluate CPM.
 
 
-| ![teaser.png](./imgs/teaser.png) |
-|:--:|
-| *CPM can replicate **both colors and patterns** from a reference makeup style to another image.*|
-
-Details of the dataset construction, model architecture, and experimental results can be found in [our following paper](https://arxiv.org/abs/2104.01867):
-
-```
-@inproceedings{m_Nguyen-etal-CVPR21,
-  author = {Thao Nguyen and Anh Tran and Minh Hoai},
-  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer},
-  year = {2021},
-  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)}
-}
-```
-**Please CITE** our paper whenever our datasets or model implementation is used to help produce published results or incorporated into other software.
-
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) - [![arXiv](https://img.shields.io/badge/arXiv-2104.01867-red.svg)](https://arxiv.org/abs/2104.01867) - [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM)
 
 ---
