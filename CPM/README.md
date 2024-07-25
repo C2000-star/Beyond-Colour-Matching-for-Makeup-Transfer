@@ -12,10 +12,6 @@
 - CPM is a holistic makeup transfer framework that outperforms previous state-of-the-art models on both light and extreme makeup styles.
 - CPM consists of an improved color transfer branch (based on [BeautyGAN](http://www.colalab.org/projects/BeautyGAN)) and a novel pattern transfer branch.
 - We also introduce 4 new datasets (both real and synthesis) to train and evaluate CPM.
-
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) - [![arXiv](https://img.shields.io/badge/arXiv-2104.01867-red.svg)](https://arxiv.org/abs/2104.01867) - [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM)
-
 ---
 
 ### Datasets
@@ -31,14 +27,6 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 |[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
 |[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel |![Stickers.png](./imgs/Stickers.png)|
 
-*Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
-> ***By downloading these datasets, USER agrees:***
-> 
-> * to use these datasets for research or educational purposes only
-> * to not distribute or part of these datasets in any original or modified form.
-> * and to [cite our paper](#cpm-color-pattern-makeup-transfer) whenever these datasets are employed to help produce published results.
-
----
 
 ### Getting Started
 
@@ -75,8 +63,6 @@ wget https://public.vinai.io/CPM_checkpoints/pattern.pth
 
 ##### Usage
 
-➡️ *You can now try it in Google Colab [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing)*
-
 ```sh
 # Color+Pattern: 
 CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png
@@ -110,27 +96,3 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 
 ---
 
-🌿 If you have trouble running the code, please read [Trouble Shooting](#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌿
-
-##### Trouble Shooting
-
-1. [Solved] `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`:
-	```
-	sudo apt update
-	sudo apt install libgl1-mesa-glx
-	```
-1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
-	Add CUDA VISIBLE DEVICES before .py. Ex:
-	```
-	CUDA_VISIBLE_DEVICES=0 python main.py
-	```
-1. [Solved] `RuntimeError: cuda runtime error (999) : unknown error at /opt/conda/conda-bld/pytorch_1595629403081/work/aten/src/THC/THCGeneral.cpp:47`
-
-	```
-	sudo rmmod nvidia_uvm
-	sudo modprobe nvidia_uvm
-	```
-
-<!-- **Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
-T. Nguyen, A. Tran, M. Hoai (2021) \
-IEEE Conference on Computer Vision and Pattern Recognition (CVPR). -->
